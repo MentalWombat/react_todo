@@ -1,25 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Grommet } from 'grommet';
+import theme from './theme';
+import Board from './Board';
 
-function App() {
+const data = {
+  todo: [
+    {
+      id: 3,
+      text: 'Learn React'
+    },
+    {
+      id: 4,
+      text: 'Paint walls'
+    },
+    {
+      id: 5,
+      text: 'Read a book'
+    }
+  ],
+  done: [
+    {
+      id: 1,
+      text: 'Walk the dog'
+    },
+    {
+      id: 2,
+      text: 'Buy a book'
+    }
+  ]
+};
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grommet theme={theme}>
+      <Board data={data} />
+    </Grommet>
   );
 }
 
